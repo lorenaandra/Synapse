@@ -1,0 +1,392 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    background-color: #1E1E1E;  /* Dark grey background like mine */
+    color: #ffffff;  /* White text for dark mode */
+    transition: all 0.3s;
+}
+
+body.light {
+    background-color: #f0f0f0;  /* Light mode */
+    color: #000000;  /* Black text for light mode */
+}
+
+.flex-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 12.5%;
+    background-color: #252526;  /* Dark grey like React example */
+    padding: 16px;  /* Adjusted for React's p-4 (16px) */
+    overflow-y: auto;
+}
+
+body.light .sidebar {
+    background-color: #e0e0e0;  /* Light mode */
+}
+
+.news-sidebar {
+    width: 25%;
+    background-color: #252526;  /* Dark grey like React example */
+    padding: 16px;  /* Adjusted for React's p-4 (16px) */
+    overflow-y: auto;
+}
+
+body.light .news-sidebar {
+    background-color: #e0e0e0;  /* Light mode */
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0;  /* Adjusted for React's p-4 (16px) */
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;  /* Adjusted for React's mt-2 (8px) */
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+.controls button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    background: #333333;  /* Dark grey for buttons in dark mode */
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.light .controls button {
+    background: #cccccc;  /* Light grey for buttons in light mode */
+    color: #000000;
+}
+
+.temp-chat-icon {
+    width: 24px;  /* Size the icon to fit the button */
+    height: 24px;
+    object-fit: contain;  /* Ensure the icon fits without distortion */
+    transition: all 0.3s;  /* Smooth transition for color changes */
+}
+
+.temp-chat-icon.active {
+    filter: invert(100%);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 100px;
+    margin-top: 0;
+    flex: 1;
+    justify-content: center;  /* Center vertically */
+}
+
+#greeting {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#salutation {
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    color: #ffffff;  /* White for dark mode */
+}
+
+body.light #salutation {
+    color: #000000;  /* Black for light mode */
+}
+
+#question {
+    font-size: 36px;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    color: #666666;  /* Lighter grey for dark mode */
+    margin-top: 5px;
+}
+
+body.light #question {
+    color: #666666;  /* Lighter grey for light mode */
+}
+
+.chat-area {
+    width: 100%;
+    max-width: 800px;  /* Wider chat area */
+    min-height: 0;  /* Allow natural height at start */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #1E1E1E;  /* Slightly lighter grey for chat area */
+    border-radius: 20px;  /* More rounded corners like mine */
+    padding: 0;  /* Adjusted for React's p-4 (16px) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+    gap: 0;  /* Small gap between messages and input */
+    margin-top: 0;
+    justify-content: flex-start;
+}
+
+.chat-area.active {
+    background-color: #1E1E1E;  /* Match body background in dark mode */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* Ensure messages start at the top */
+    border-radius: 0;  /* No bubble appearance */
+    box-shadow: none;  /* No shadow for flat look */
+    padding: 0;  /* No padding for full-height flat layout */
+    height: calc(100vh - 56px); /* Full height minus header */
+    margin: 0 auto;
+    position: relative;
+}
+
+body.light .chat-area.active {
+    background-color: #f0f0f0;  /* Light grey for light mode flat layout */
+}
+
+.messages {
+    flex: 1;  /* Allow messages to grow and fill available space */
+    overflow-y: auto;
+    padding: 8px;  /* Adjusted for React's p-2 (8px) */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 0;
+}
+
+.message {
+    margin: 8px 0;  /* Adjusted for React's space-y-2 (8px) */
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+.message.user {
+    background: #333333;  /* Dark grey like React's bg-blue-500 but darker */
+    color: white;
+    padding: 8px;  /* Adjusted for React's p-2 (8px) */
+    border-radius: 8px;  /* Adjusted for React's rounded-lg (8px) */
+    max-width: 75%;  /* Adjusted for React's max-w-xs and w-fit */
+    margin-left: auto;
+    margin-right: 0;
+    display: inline-block;
+    align-self: flex-end;
+}
+
+.message.bot {
+    margin: 8px 0;  /* Adjusted for React's space-y-2 (8px) */
+    padding: 0;
+    background: none;
+    max-width: 100%;
+    color: #ffffff;  /* White for dark mode */
+    align-self: flex-start;
+    border-radius: 0;
+}
+
+body.light .message.bot {
+    color: #000000;  /* Black for light mode */
+}
+
+body.light .message.user {
+    background: #007bff;  /* Light mode blue like React's bg-blue-500 */
+}
+
+body.light .chat-area {
+    background-color: #ffffff;  /* White for light mode (initial) */
+}
+
+.input-container {
+    margin-top: auto;  /* Remove margin to stack directly under messages */
+    display: flex;
+    flex-direction: column;  /* Stack input and button vertically */
+    align-items: center;  /* Center horizontally */
+    gap: 8px;  /* Small gap between input and button */
+    width: 100%;
+    max-width: 800px;  /* Match chat area width */
+}
+
+
+.chat-area.active .input-container {
+    width: 100%;
+    max-width: 800px;  /* Match chat area width */
+    display: flex;
+    flex-direction: column;  /* Stack input and button vertically */
+    align-items: center;  /* Center horizontally */
+    gap: 8px;  /* Small gap between input and button */
+    border-radius: 0;  /* No rounded corners */
+    position: fixed;  /* Fix at bottom of page */
+    bottom: 0;  /* Anchor to the bottom */
+    z-index: 10;  /* Ensure it stays above other content */
+}
+
+#messageInput {
+    padding: 12px;
+    border: none;
+    border-radius: 20px;  /* Rounded like mine */
+    background: #333333;  /* Dark grey for input */
+    color: #ffffff;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-size: 16px;
+    width: 100%;  /* Full width of chat-area */
+    max-width: 760px;  /* Slightly less than max-width of chat-area for padding */
+}
+
+body.light #messageInput {
+    background: #f0f0f0;  /* Light grey for light mode */
+    color: #000000;
+}
+
+#sendBtn {
+    width: 30px;  /* Small, round button */
+    height: 30px;
+    padding: 0;
+    border: none;
+    background: #333333;  /* Dark grey for button in dark mode */
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 50%;  /* Fully round */
+    font-size: 16px;  /* Size for arrow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.light #sendBtn {
+    background: #cccccc;  /* Light grey for button in light mode */
+    color: #000000;
+}
+
+#sendBtn:hover {
+    background: #4a4a4a;  /* Darker on hover in dark mode */
+}
+
+body.light #sendBtn:hover {
+    background: #999999;  /* Darker on hover in light mode */
+}
+
+h2 {
+    font-size: 1.2em;  /* Adjusted for React's text-lg (~18px) */
+    margin-bottom: 8px;  /* Adjusted for React's space-y-2 (8px) */
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+.conversation {
+    padding: 8px;  /* Adjusted for React's p-2 (8px) */
+    background: #2D2D2D;  /* Dark grey like React's bg-[#2D2D2D] */
+    margin: 4px 0;  /* Adjusted for React's space-y-2 (8px) */
+    border-radius: 8px;  /* Adjusted for React's rounded-lg (8px) */
+    cursor: pointer;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+body.light .conversation {
+    background: #d0d0d0;  /* Light mode */
+}
+
+.conversation:hover {
+    background: #3C3C3C;  /* Darker grey like React's hover:bg-[#3C3C3C] */
+}
+
+body.light .conversation:hover {
+    background: #b0b0b0;  /* Light mode hover */
+}
+
+.space-y-2 > * + * {
+    margin-top: 8px;  /* Ensure space-y-2 spacing for conversations and news */
+}
+
+.news-item {
+    padding: 8px;  /* Adjusted for React's p-2 (8px) */
+    background: #2D2D2D;  /* Dark grey like React's bg-[#2D2D2D] */
+    margin: 4px 0;  /* Adjusted for React's space-y-2 (8px) */
+    border-radius: 8px;  /* Adjusted for React's rounded-lg (8px) */
+    display: flex;
+    gap: 8px;  /* Adjusted for React's gap-2 (8px) */
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+body.light .news-item {
+    background: #d0d0d0;  /* Light mode */
+}
+
+.news-item img {
+    width: 40px;  /* Adjusted for React's w-10 (40px) */
+    height: 40px;  /* Adjusted for React's h-10 (40px) */
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.news-item span {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+.news-item .source {
+    color: #666666;  /* Light mode */
+    font-size: 15.4px;
+    margin-bottom: 2px;
+}
+
+body.dark .news-item .source {
+    color: #aaaaaa;  /* Dark mode */
+}
+
+body.light .news-item .source {
+    color: #666666;  /* Light mode */
+}
+
+.news-item p {
+    margin: 0;
+}
+
+.verdict {
+    font-weight: bold;
+    color: #000000;  /* Light mode */
+    font-size: 17px;
+    margin-right: 8px;  /* Space before the bubble */
+}
+
+body.dark .verdict {
+    color: white;  /* Dark mode */
+}
+
+.verdict-result {
+    padding: 2px 8px;
+    border-radius: 12px;
+    color: white;
+    font-size: 15.4px;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    display: inline-block;  /* Ensure bubble stays inline */
+}
+
+.verdict-true {
+    background: #00cc00;  /* Green for "True" */
+}
+
+.verdict-false {
+    background: #ff0000;  /* Red for "False" */
+}
+
+.verdict-misleading {
+    background: #ff8c00;  /* Orange for "Misleading" */
+}
+
+.verdict-satire {
+    background: #9370db;  /* Purple for "Satire" */
+}
