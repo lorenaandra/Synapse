@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synapse Chat</title>
-    <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Synapse Chat</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <div class="flex-container">
-        <!-- Conversations Sidebar (always visible) -->
-        <div class="sidebar">
-            <h2 class="text-lg font-bold">Conversations</h2>
-            <div id="conversations" class="space-y-2"></div>
-        </div>
-
-        <!-- Main Chat Area -->
-        <div class="main">
-            <div class="header">
-                <div class="controls">
-                    <button id="newChat" title="New Chat">+</button>
-                    <button id="tempChat" title="Temporary Chat">
-                        <img src="/images/ghost-icon.png" alt="Temporary Chat" class="temp-chat-icon">
-                    </button>
-                    <button id="themeToggle" title="Toggle Theme">☀️</button>
-                </div>
-            </div>
-            <div class="content">
-                <div id="greeting">
-                    <div id="salutation"></div>
-                    <div id="question"></div>
-                </div>
-                <div class="chat-area">
-                    <div class="messages" id="messages"></div>
-                    <div class="input-container">
-                        <input type="text" id="messageInput" placeholder="What do you want to know?">
-                        <button id="sendBtn">↑</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- News Sidebar (always visible) -->
-        <div class="news-sidebar">
-            <h2 class="text-lg font-bold">Top Searches</h2>
-            <div id="top-searches" class="space-y-2"></div>
-        </div>
+  <div class="flex-container">
+    <!-- Conversations Sidebar -->
+    <div class="sidebar" id="conversations-sidebar">
+      <h2 id="conversations-header" class="text-lg font-bold">
+        <img src="/images/conversation-history-icon.png" alt="Conversations" class="icon">
+      </h2>
+      <div id="conversations-container">
+        <div id="conversations" class="space-y-2"></div>
+      </div>
     </div>
-    <script src="/script.js"></script>
+
+    <!-- Main Chat Area -->
+    <div class="main">
+      <div class="header">
+        <div class="controls">
+          <button id="newChat" title="New Chat">
+            <img src="/images/new-chat-icon.png" alt="New Chat" class="icon">
+          </button>
+          <button id="tempChat" title="Temporary Chat">
+            <img src="/images/ghost-icon.png" alt="Temporary Chat" class="icon">
+          </button>
+          <button id="themeToggle" title="Toggle Theme">☀️</button>
+        </div>
+      </div>
+      <div class="content">
+        <div id="greeting">
+          <div id="salutation"></div>
+          <div id="question"></div>
+        </div>
+        <div class="chat-area">
+          <div class="messages" id="messages"></div>
+          <div class="input-container">
+            <input type="text" id="messageInput" placeholder="What do you want to know?">
+            <button id="sendBtn">↑</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- News Sidebar -->
+    <div class="news-sidebar" id="top-searches-sidebar">
+      <h2 id="top-searches-header" class="text-lg font-bold">
+        <img src="/images/top-searches-icon.png" alt="Top Searches" class="icon">
+      </h2>
+      <div id="top-searches-container">
+        <div id="top-searches" class="space-y-2"></div>
+      </div>
+    </div>
+  </div>
+  <script src="/script.js"></script>
 </body>
 </html>

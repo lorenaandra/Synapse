@@ -132,6 +132,41 @@ document.addEventListener('DOMContentLoaded', () => {
         topSearchesDiv.appendChild(div);
     });
 
+    const conversationsHeader = document.getElementById('conversations-header');
+    const topSearchesHeader = document.getElementById('top-searches-header');
+  
+    // Get the containers that hold the content
+    const conversationsContainer = document.getElementById('conversations-container');
+    const topSearchesContainer = document.getElementById('top-searches-container');
+  
+    // Get the sidebar elements
+    const conversationsSidebar = document.getElementById('conversations-sidebar');
+    const topSearchesSidebar = document.getElementById('top-searches-sidebar');
+
+
+    // Toggle Conversations content on header click
+    conversationsHeader.addEventListener('click', () => {
+        conversationsContainer.classList.toggle('hidden');
+        if (conversationsContainer.classList.contains('hidden')) {
+        conversationsSidebar.classList.add('collapsed');
+        } else {
+        conversationsSidebar.classList.remove('collapsed');
+        }
+        console.log('Toggled Conversations content. Collapsed:', conversationsSidebar.classList.contains('collapsed'));
+    });
+  
+    // Toggle Top Searches content on header click
+    topSearchesHeader.addEventListener('click', () => {
+        topSearchesContainer.classList.toggle('hidden');
+        if (topSearchesContainer.classList.contains('hidden')) {
+        topSearchesSidebar.classList.add('collapsed');
+        } else {
+        topSearchesSidebar.classList.remove('collapsed');
+        }
+        console.log('Toggled Top Searches content. Collapsed:', topSearchesSidebar.classList.contains('collapsed'));
+    });
+
+
     function sendMessage() {
         const message = messageInput.value.trim();
         if (!message) return;
@@ -158,31 +193,30 @@ document.addEventListener('DOMContentLoaded', () => {
             const salutation = document.getElementById('salutation');
             const question = document.getElementById('question');
             const chatArea = document.querySelector('.chat-area');
+            const content = document.querySelector('.content');
             
-            if (salutation && question && chatArea) {
+            if (salutation && question && chatArea && content) {
                 salutation.style.display = 'none';  // Hide greeting
                 question.style.display = 'none';  // Hide question
-                chatArea.classList.add('active');  // Remove bubble styling, keep full height
-                console.log('First user message sent, greeting hidden, chat area maximized with input at bottom.');
+                chatArea.classList.add('active');  // Activate chat-area styles
+                content.classList.add('active');   // Change alignment of content container
+                console.log('First user message sent, greeting hidden, chat area maximized and aligned to top.');
             }
         }
     }
     
-    function addMessage(text, sender) {
-        const div = document.createElement('div');
-        div.className = `message ${sender}`;
-        div.textContent = text;
-        messages.appendChild(div);
-        messages.scrollTop = messages.scrollHeight;
 
-        // Adjust chat area height dynamically if messages exceed natural height
-        if (messages.scrollHeight > chatArea.scrollHeight) {
-            chatArea.style.height = 'auto';  // Allow chat area to grow
-            chatArea.style.maxHeight = 'auto';  // Remove height limitation, allow full expansion
-            chatArea.style.overflowY = 'auto';  // Enable scrolling if needed
-            console.log('Chat area expanded to auto, max auto:', chatArea.style.height);
-        }
-    }
+    function addMessage(text, sender) {
+        const message = document.createElement('div');
+        message.classList.add('message', sender);
+        message.textContent = text;
+    
+        // Append at the end
+        messages.appendChild(message);
+    
+        // Auto-scroll to latest message
+        messages.scrollTop = messages.scrollHeight;
+    }    
 
     // Debug logs to check if content is loaded
     console.log('Conversations loaded:', conversationsDiv.children.length);
