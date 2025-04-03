@@ -101,10 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
     conversations.forEach(conv => {
         const div = document.createElement('div');
         div.className = 'conversation';
-        div.textContent = conv;
+        // Split the conversation string into words and wrap each in a span,
+        // then join them with a <br> so each word appears on its own line.
+        div.innerHTML = conv.split(' ').map(word => `<span class="conversation-word">${word}</span>`).join(' ');
         conversationsDiv.appendChild(div);
-    });
-
+        });
+    
     // Top Searches (exact examples with title, source, verdict from React code, with diversified verdicts)
     const topSearches = [
         { text: "Aliens have landed in New York!", img: "https://via.placeholder.com/40", source: "FakeNewsDaily.com", tag: "False" },
@@ -153,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         conversationsSidebar.classList.remove('collapsed');
         }
         console.log('Toggled Conversations content. Collapsed:', conversationsSidebar.classList.contains('collapsed'));
+        //positionInputContainerFixed();
     });
   
     // Toggle Top Searches content on header click
@@ -164,28 +167,31 @@ document.addEventListener('DOMContentLoaded', () => {
         topSearchesSidebar.classList.remove('collapsed');
         }
         console.log('Toggled Top Searches content. Collapsed:', topSearchesSidebar.classList.contains('collapsed'));
+        //positionInputContainerFixed();
     });
-
-
+      
     function sendMessage() {
         const message = messageInput.value.trim();
         if (!message) return;
     
         addMessage(message, 'user');
-        
-        fetch('/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message })
-        })
-        .then(response => response.json())
-        .then(data => addMessage(data.response, 'bot'))
-        .catch(error => {
-            addMessage('Error: Could not reach Synapse', 'bot');
-            console.error(error);
-        });
-    
         messageInput.value = '';
+
+        showSynapseAnimation();
+
+        setTimeout(() => {
+            fetch('/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message })
+            })
+            .then(response => response.json())
+            .then(data => addMessage(data.response, 'bot'))
+            .catch(error => {
+                addMessage('Error: Could not reach Synapse', 'bot');
+                console.error(error);
+            });
+        }, 4000);
     
         // Check if this is the first user message and modify the chat area
         const userMessages = document.querySelectorAll('.message.user');
@@ -205,6 +211,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
+    function showSynapseAnimation() {
+        const synapseEl = document.getElementById('synapse-animation');
+        if (!synapseEl) return;
+        
+        synapseEl.style.display = 'flex';  // Show the overlay
+        // After 4 seconds, hide the overlay
+        setTimeout(() => {
+          synapseEl.style.display = 'none';
+        }, 4000);
+      }
+                    
 
     function addMessage(text, sender) {
         const message = document.createElement('div');
@@ -217,6 +234,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Auto-scroll to latest message
         messages.scrollTop = messages.scrollHeight;
     }    
+
+    window.addEventListener('resize', positionInputContainer);
+
 
     // Debug logs to check if content is loaded
     console.log('Conversations loaded:', conversationsDiv.children.length);
