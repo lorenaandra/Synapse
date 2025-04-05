@@ -5,18 +5,49 @@
     margin: 0;
     padding: 0;
     font-family: 'Arial', 'Helvetica', sans-serif;
-    background-color: #1E1E1E; /* Dark mode background */
-    color: #FAF1E6;           /* Dark mode text color */
+    background-color: #1E1E1E; /* dark mode background */
+    color: #FAF1E6;           /* dark mode text color */
     transition: all 0.3s;
   }
+
   body.light {
-    background-color: #FAF1E6; /* Light mode (creamy background) */
+    background-color: #FAF1E6; /* Light mode w a creamy background */
     color: #000000;
   }
+
   html, body, .chat-container {
     height: 100%;
     margin: 0;
   }
+
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 0 16px; 
+  }
+  
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Logo */
+  .logo {
+    width: 90px;
+  }
+
+  .logo-text {
+    font-size: 18px;   
+    color: #FBFBFB; 
+    text-align: center;
+  }
+
+  body.light .logo-text {
+    color: black;
+  }
+
+    
   
   /* ==========================================================================
      Global Utilities
@@ -33,6 +64,8 @@
     display: none;
   }
   
+
+
   /* ==========================================================================
      Layout: Flex Container
      ========================================================================== */
@@ -41,6 +74,8 @@
     height: 100vh;
   }
   
+
+
   /* ==========================================================================
      Sidebars
      ========================================================================== */
@@ -61,7 +96,7 @@
     background-color: #252526;
   }
   
-  /* Light mode sidebars use the same creamy background as the body */
+  /* Light mode sidebars */
   body.light .sidebar {
     background-color: #FAF1E6;
   }
@@ -82,10 +117,13 @@
     50%  { transform: translateX(-15px); }
     100% { transform: translateX(0); }
   }
+
   .animate-icon {
     animation: slideIcon 0.5s ease;
   }
   
+
+
   /* ==========================================================================
      Main Content & Header
      ========================================================================== */
@@ -96,15 +134,19 @@
     padding: 0;
     position: relative;
   }
+
   .header {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 8px;
   }
+
   .controls {
+    margin-left: auto;
     display: flex;
     gap: 10px;
   }
+
   .controls button {
     width: 40px;
     height: 40px;
@@ -119,20 +161,31 @@
     align-items: center;
     justify-content: center;
   }
+
   body.light .controls button {
     background: #99BC85;
     color: #000000;
   }
+
   .temp-chat-icon {
     width: 24px;
     height: 24px;
     object-fit: contain;
     transition: all 0.3s;
   }
+
   .temp-chat-icon.active {
     filter: invert(100%);
   }
+
+  /* TEMPORARY CHAT MODE */
+  .temp-chat .message.user {
+    border: 2px dashed #CCC;
+    padding: 12px 16px;
+  }
+
   
+
   /* ==========================================================================
      Content Area (Greeting & Chat Area)
      ========================================================================== */
@@ -140,36 +193,44 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Center vertically by default */
+    justify-content: center; 
     flex: 1;
     overflow: hidden;
     margin-bottom: 100px;
   }
+
   .content.active {
     justify-content: flex-start;
   }
+
   /* Greeting */
   #greeting {
     text-align: center;
     margin-bottom: 20px;
   }
+
   #salutation {
     font-size: 36px;
     font-weight: bold;
     color: #FBFBFB;
   }
+
   body.light #salutation {
     color: #000000;
   }
+
   #question {
     font-size: 36px;
     color: #666666;
     margin-top: 5px;
   }
+
   body.light #question {
     color: #666666;
   }
   
+
+
   /* ==========================================================================
      Chat Area
      ========================================================================== */
@@ -179,7 +240,8 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #FDFAF6; /* Light mode background */
+    /* light mode background */
+    background-color: #FDFAF6; 
     border-radius: 20px;
     padding: 16px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -187,11 +249,13 @@
     justify-content: flex-start;
     position: relative;
   }
-  /* Dark mode override for chat area */
+
+  /* dark mode chat area */
   body:not(.light) .chat-area {
     background-color: #1E1E1E;
   }
-  /* Active chat area (after conversation starts) */
+
+  /* active chat area - after conversation starts */
   .chat-area.active {
     border-radius: 0;
     box-shadow: none;
@@ -205,6 +269,8 @@
     background-color: #FAF1E6;
   }
   
+
+
   /* ==========================================================================
      Messages Container & Bubbles
      ========================================================================== */
@@ -218,7 +284,7 @@
     padding: 10px;
   }
   
-  /* Bot message (transparent) */
+  /* bot message - no background */
   .message.bot {
     margin: 8px 0;
     padding: 0;
@@ -228,11 +294,12 @@
     align-self: flex-start;
     border-radius: 0;
   }
+
   body.light .message.bot {
     color: #000000;
   }
   
-  /* User message – teardrop shape with pointer */
+  /* user message – teardrop shape */
   .message.user {
     position: relative;
     margin: 8px 0;
@@ -240,7 +307,7 @@
     max-width: 75%;
     margin-left: auto;
     display: inline-block;
-    border-radius: 20px 20px 0 20px; /* Teardrop shape */
+    border-radius: 20px 20px 0 20px; 
     border: 1px solid #CCC;
   }
 
@@ -254,7 +321,7 @@
     border-color: transparent transparent transparent;
   }
 
-  /* Dark mode user bubble */
+  /* dark mode user bubble */
   body:not(.light) .message.user {
     background: #333333;
     color: #FAFAF5;
@@ -263,22 +330,24 @@
   body:not(.light) .message.user::after {
     border-left-color: #333333;
   }
-  /* Light mode user bubble */
+
   body.light .message.user {
-    background: #FDFAF6; /* White bubble for contrast */
+    background: #FDFAF6;
     color: #000000;
   }
+
   body.light .message.user::after {
     border-left-color: #FDFAF6;
   }
   
+
+
   /* ==========================================================================
      Input Container & Elements
      ========================================================================== */
   .input-container {
     margin-top: auto;
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     gap: 8px;
     width: 100%;
@@ -289,32 +358,32 @@
     position: fixed;
     bottom: 0;
     left: calc(43.75vw - 400px);
-    /* transform: translateX(-50%); */
-    width: 800px;         /* Fixed width (adjust as desired) */
-    max-width: 90%;       /* Responsive fallback for smaller viewports */
-    z-index: 9999;        /* Ensures it's on top of the sidebars */
+    width: 800px; 
+    max-width: 90%;       /* for smaller viewports */
+    z-index: 9999;        /* on top of the sidebars */
     padding: 12px;
-    background: inherit;  /* Matches the chat area background */
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Shadow only on the top edge */
-}
-
-@media (max-width: 1200px) {
-  .chat-area.active .input-container {
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      max-width: 97%;
+    background: inherit; 
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* shadow */
   }
-}
+
+
+  @media (max-width: 1200px) {
+    .chat-area.active .input-container {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 97%;
+    }
+  }
 
   .chat-area.active .messages {
-    padding-bottom: 100px; /* adjust this value to match the height of the input container */
+    padding-bottom: 100px;
   }
 
   #messageInput {
-    flex: 1;     /* this ensures the textbox expands/shrinks */
-    width: 100%; /* in a flex row, it will grow into leftover space */
-    max-width: 760px; /* optional to cap its size inside the container */
+    flex: 1;     /* for expanding/shrinking */
+    width: 100%; 
+    max-width: 760px;
     padding: 12px;
     border: none;
     border-radius: 20px;
@@ -342,17 +411,22 @@
     align-items: center;
     justify-content: center;
   }
+
   body.light #sendBtn {
     background: #99BC85;
     color: #000000;
   }
+
   #sendBtn:hover {
     background: #4a4a4a;
   }
+
   body.light #sendBtn:hover {
     background: #999999;
   }
   
+
+
   /* ==========================================================================
      Headings & Conversation List
      ========================================================================== */
@@ -362,7 +436,7 @@
     font-family: 'Arial', 'Helvetica', sans-serif;
   }
   
-  /* Conversation items in sidebars */
+  /* conversation items in sidebars */
   .conversation {
     padding: 8px;
     background: #2D2D2D;
@@ -372,25 +446,23 @@
     font-family: 'Arial', 'Helvetica', sans-serif;
     color: #FBFBFB;
     border: 1px solid #3C3C3C;
-
     white-space: normal;
   }
 
-
   body.light .conversation {
-    background: #FDFAF6;  /* White “cards” for conversation items in light mode */
+    background: #FDFAF6;  /* white “cards” for conversation items - light mode */
     color: #000000;
     border: 1px solid #CCC;
     white-space: normal;
   }
 
-  /* Style for each word */
+  /* style for each word */
   .conversation-word {
-    display: inline-block;    /* Allows ellipsis on a per-word basis */
-    white-space: nowrap;        /* Prevent each word from wrapping internally */
-    overflow: hidden;           /* Hide overflowed content */
-    text-overflow: ellipsis;    /* Show ellipsis if the word is too long */
-    max-width: 100%;            /* Word can grow up to the container’s width */
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;           /* hide overflowed content */
+    text-overflow: ellipsis;    
+    max-width: 100%;            /* word can grow up to the container’s width */
     vertical-align: baseline;
   }
 
@@ -405,80 +477,72 @@
     margin-top: 8px;
   }
 
+
+
   /* ==========================================================================
      Synapse Animation Overlay
      ========================================================================== */
-  
-  /* =============== Overlay Container =============== */
-  .synapse-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Dim background */
+  /* Container for the inline bot animation */
+  .bot-animation {
     display: flex;
     align-items: center;
-    justify-content: center;
-    z-index: 10000;
+    justify-content: flex-start;
+    max-width: 300px;
+    margin: 10px 0;
+    padding: 5px;
   }
 
-  .synapse-container {
-    text-align: center;
+  .triangle-container {
+    position: relative;
+    width: 60px; 
+    height: 60px;
+    margin-right: 10px; /* space between triangle and text */
+    animation: rotate 2s linear infinite;
+  }
+
+  .dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translate(var(--x), var(--y));
+    animation: moveDots 1s ease-in-out infinite;
+  }
+
+  /* triangle vertices */
+  .dot1 { --x: 0px;   --y: -20px; }  
+  .dot2 { --x: 17px;  --y: 10px;  } 
+  .dot3 { --x: -17px; --y: 10px;  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  @keyframes moveDots {
+    0%, 100% {
+      transform: translate(-50%, -50%) translate(var(--x), var(--y));
+    }
+    50% {
+      transform: translate(-50%, -50%) translate(0, 0);
+    }
+  }
+
+  .triangle-text {
+    font-size: 16px;
     color: #FFD700;
   }
 
-  .synapse-svg {
-    width: 800px;
-    height: 300px;
+  body.light .bot-animation .triangle-container .dot {
+    background: #333; 
   }
 
-  /* =============== Animations =============== */
-
-  /* 1) Soma (cell body) fades in */
-  .neuron-soma {
-    opacity: 0;
-    animation: fadeIn 1s forwards;
+  body.light .bot-animation .triangle-text {
+    color: #99BC85;
   }
-
-  /* 2) Dendrites & axons draw themselves */
-  .neuron-dendrite,
-  .neuron-axon {
-    stroke-dasharray: 100;
-    stroke-dashoffset: 100;
-    animation: drawLine 2s forwards;
-    animation-delay: 0.5s;
-  }
-
-  /* Pulsing text below the SVG */
-  .synapse-text {
-    margin-top: 20px;
-    font-size: 24px;
-    animation: pulse 1s infinite;
-  }
-
-  /* Keyframes: fade in the soma */
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-
-  /* Keyframes: "draw" lines by animating dash offset */
-  @keyframes drawLine {
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-
-  /* Keyframes: pulsing text */
-  @keyframes pulse {
-    0%   { opacity: 0.7; }
-    50%  { opacity: 1;   }
-    100% { opacity: 0.7; }
-  }
-
-
 
 
   
@@ -496,35 +560,40 @@
     color: #FBFBFB;
     border: 1px solid #3C3C3C;
   }
+
   body.light .news-item {
-    background: #FDFAF6; /* White “cards” for news items in light mode */
+    background: #FDFAF6; 
     color: #000000;
     border: 1px solid #CCC;
   }
+
   .news-item img {
     width: 40px;
     height: 40px;
     border-radius: 5px;
     object-fit: cover;
   }
+
   .news-item span {
     font-weight: bold;
     font-size: 18px;
     margin-bottom: 2px;
   }
+
   .news-item .source {
     color: #aaaaaa;
     font-size: 15.4px;
     margin-bottom: 2px;
   }
+
   body.light .news-item .source {
     color: #666666;
   }
+
   .news-item p {
     margin: 0;
   }
   
-  /* Verdict labels */
   .verdict {
     font-weight: bold;
     color: white;
@@ -544,15 +613,19 @@
     font-family: 'Arial', 'Helvetica', sans-serif;
     display: inline-block;
   }
+
   .verdict-true {
     background: #00cc00;
   }
+
   .verdict-false {
     background: #ff0000;
   }
+
   .verdict-misleading {
     background: #ff8c00;
   }
+  
   .verdict-satire {
     background: #9370db;
   }

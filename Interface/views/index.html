@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Synapse Chat</title>
   <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
   <div class="flex-container">
     <!-- Conversations Sidebar -->
@@ -17,10 +19,13 @@
         <div id="conversations" class="space-y-2"></div>
       </div>
     </div>
-
     <!-- Main Chat Area -->
     <div class="main">
       <div class="header">
+        <!--LOGO-->
+        <img src="/images/synapse-logo.png" alt="Synapse Logo" class="logo">
+        <div class="logo-text">Synapse</div>
+        <!--Control Icons-->
         <div class="controls">
           <button id="newChat" title="New Chat">
             <img src="/images/new-chat-icon.png" alt="New Chat" class="icon">
@@ -31,11 +36,14 @@
           <button id="themeToggle" title="Toggle Theme">☀️</button>
         </div>
       </div>
+
       <div class="content">
+        <!--Greeting & Salutation -->
         <div id="greeting">
           <div id="salutation"></div>
           <div id="question"></div>
         </div>
+        <!--Messages & Chat-->
         <div class="chat-area">
           <div class="messages" id="messages"></div>
           <div class="input-container">
@@ -56,85 +64,9 @@
       </div>
     </div>
 
-
-    
-
-    <!-- Neuron-Style Synapse Animation Overlay -->
-    <div id="synapse-animation" class="synapse-animation" style="display: none;">
-      <div class="synapse-container">
-        <svg class="synapse-svg" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
-          
-          <!-- Neuron 1 -->
-          <g class="neuron" transform="translate(80,150)">
-            <!-- Cell body (soma) -->
-            <circle class="neuron-soma" cx="0" cy="0" r="20" fill="#FFD700" />
-            
-            <!-- Dendrites (branch out from around the soma) -->
-            <path class="neuron-dendrite" d="M -20,0 C -40,-10, -40,-30, -30,-40" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-dendrite" d="M 0,-20 C -10,-30, -20,-40, -10,-50" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-dendrite" d="M 0,20 C -10,30, -20,40, -10,50" fill="none" stroke="#FFD700" stroke-width="2"/>
-            
-            <!-- Axon (extends to the right, with small branches at the tip) -->
-            <path class="neuron-axon" d="M 20,0 C 40,0, 60,-10, 80,-5" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-axon" d="M 80,-5 C 90,-15, 100,-5, 110,-10" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-axon" d="M 80,-5 C 90,5, 100,15, 110,10" fill="none" stroke="#FFD700" stroke-width="2"/>
-          </g>
-          
-          <!-- Neuron 2 -->
-          <g class="neuron" transform="translate(230,150)">
-            <circle class="neuron-soma" cx="0" cy="0" r="20" fill="#FFD700" />
-            <path class="neuron-dendrite" d="M -20,0 C -40,-10, -40,-30, -30,-40" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-dendrite" d="M 0,-20 C -10,-30, -20,-40, -10,-50" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-dendrite" d="M 0,20 C -10,30, -20,40, -10,50" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-axon" d="M 20,0 C 40,0, 60,-10, 80,-5" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-axon" d="M 80,-5 C 90,-15, 100,-5, 110,-10" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-axon" d="M 80,-5 C 90,5, 100,15, 110,10" fill="none" stroke="#FFD700" stroke-width="2"/>
-          </g>
-          
-          <!-- Neuron 3 -->
-          <g class="neuron" transform="translate(380,150)">
-            <circle class="neuron-soma" cx="0" cy="0" r="20" fill="#FFD700" />
-            <path class="neuron-dendrite" d="M -20,0 C -40,-10, -40,-30, -30,-40" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-dendrite" d="M 0,-20 C -10,-30, -20,-40, -10,-50" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-dendrite" d="M 0,20 C -10,30, -20,40, -10,50" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-axon" d="M 20,0 C 40,0, 60,-10, 80,-5" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-axon" d="M 80,-5 C 90,-15, 100,-5, 110,-10" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-axon" d="M 80,-5 C 90,5, 100,15, 110,10" fill="none" stroke="#FFD700" stroke-width="2"/>
-          </g>
-          
-          <!-- Neuron 4 -->
-          <g class="neuron" transform="translate(530,150)">
-            <circle class="neuron-soma" cx="0" cy="0" r="20" fill="#FFD700" />
-            <path class="neuron-dendrite" d="M -20,0 C -40,-10, -40,-30, -30,-40" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-dendrite" d="M 0,-20 C -10,-30, -20,-40, -10,-50" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-dendrite" d="M 0,20 C -10,30, -20,40, -10,50" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-axon" d="M 20,0 C 40,0, 60,-10, 80,-5" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-axon" d="M 80,-5 C 90,-15, 100,-5, 110,-10" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-axon" d="M 80,-5 C 90,5, 100,15, 110,10" fill="none" stroke="#FFD700" stroke-width="2"/>
-          </g>
-          
-          <!-- Neuron 5 -->
-          <g class="neuron" transform="translate(680,150)">
-            <circle class="neuron-soma" cx="0" cy="0" r="20" fill="#FFD700" />
-            <path class="neuron-dendrite" d="M -20,0 C -40,-10, -40,-30, -30,-40" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-dendrite" d="M 0,-20 C -10,-30, -20,-40, -10,-50" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-dendrite" d="M 0,20 C -10,30, -20,40, -10,50" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-axon" d="M 20,0 C 40,0, 60,-10, 80,-5" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-axon" d="M 80,-5 C 90,-15, 100,-5, 110,-10" fill="none" stroke="#FFD700" stroke-width="2"/>
-            <path class="neuron-axon" d="M 80,-5 C 90,5, 100,15, 110,10" fill="none" stroke="#FFD700" stroke-width="2"/>
-          </g>
-          
-        </svg>
-        
-        <div class="synapse-text">Currently forming a Synapse..</div>
-      </div>
-    </div>
-
-
-
-
-
   </div>
   <script src="/script.js"></script>
 </body>
 </html>
+
+
