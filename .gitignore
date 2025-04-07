@@ -2,7 +2,7 @@
 node_modules/
 github_sshkey
 github_sshkey.pub
-Backend/db.js
+Backend/db_credentials.js
 
 # Ignore .env files for environment variables
 .env
