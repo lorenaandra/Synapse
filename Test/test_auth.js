@@ -88,13 +88,13 @@ async function testAuth() {
   }
 
   // ----- Clean Up: Delete all users from the database -----
-  // try {
-  //   console.log('\nCleaning up: Deleting all users from the database...');
-  //   await pool.query('DELETE FROM users;');
-  //   console.log(chalk.green('Cleanup successful: Users table cleaned.'));
-  // } catch (err) {
-  //   console.error(chalk.red('Cleanup error:'), err);
-  // }
+  try {
+    console.log('\nCleaning up: Deleting all users from the database...');
+    await pool.query('DELETE FROM users;');
+    console.log(chalk.green('Cleanup successful: Users table cleaned.'));
+  } catch (err) {
+    console.error(chalk.red('Cleanup error:'), err);
+  }
 }
 
 testAuth();

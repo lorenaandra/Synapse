@@ -10,8 +10,6 @@ Synapse is an artificial intelligence chatbot presented as a web application bui
 - [Installation and Setup](#installation-and-setup)
 - [Usage Flow](#usage-flow)
 - [API Endpoints](#api-endpoints)
-- [Testing](#testing)
-- [Future Enhancements](#future-enhancements)
 
 ## Features
 

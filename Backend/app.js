@@ -2,10 +2,14 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
+const path = require('path');
 const pool = require('./db_credentials');
 const app = express();
 
 app.use(bodyParser.json());
+
+app.use(express.static(path.join(__dirname, '../Interface/public')));
+
 
 app.post('/api/test', (req, res) => {
   res.json({ success: true, message: 'Test route reached' });
@@ -61,6 +65,13 @@ app.post('/api/login', async (req, res) => {
 //// SIGN OUT ENDPOINT
 app.post('/api/signout', (req, res) => {
   res.json({ success: true, message: 'Signed out successfully' });
+});
+
+// any route that isn't matched by an API endpoint -> serve index.html
+app.get('*name', (req, res) => {
+  const indexPath = path.join(__dirname, '../Interface/views/index.html');
+  console.log('Serving index from:', indexPath);
+  res.sendFile(indexPath);
 });
 
 app.listen(3000, () => {
