@@ -27,6 +27,9 @@
         <div class="logo-text">Synapse</div>
         <!--Control Icons-->
         <div class="controls">
+          <button id="authToggle" title="Account">
+            <img src="/images/login-icon.png" alt="Account" class="icon">
+          </button>
           <button id="newChat" title="New Chat">
             <img src="/images/new-chat-icon.png" alt="New Chat" class="icon">
           </button>
@@ -37,6 +40,31 @@
         </div>
       </div>
 
+      <!-- Hidden authentication form -->
+      <div id="auth-form" class="auth-form" style="display: none;">
+        <div class="auth-tabs">
+          <button id="signinTab" class="active">Sign In</button>
+          <button id="signupTab">Sign Up</button>
+        </div>
+        <div id="signinForm" class="auth-form-content">
+          <input type="text" id="loginUsername" placeholder="Username">
+          <input type="password" id="loginPassword" placeholder="Password">
+          <button id="loginBtn">Sign In</button>
+          <button id="cancelAuthBtn">Cancel</button>
+        </div>
+        <div id="signupForm" class="auth-form-content" style="display: none;">
+          <input type="text" id="signupUsername" placeholder="Username">
+          <input type="password" id="signupPassword" placeholder="Password">
+          <input type="password" id="signupConfirmPassword" placeholder="Confirm Password">
+          <button id="signupBtn">Sign Up</button>
+          <button id="cancelSignupBtn">Cancel</button>
+        </div>
+        <div id="signoutForm" class="auth-form-content" style="display: none;">
+          <button id="signoutBtn">Sign Out</button>
+          <button id="cancelSignoutBtn">Cancel</button>
+        </div>
+      </div>
+      
       <div class="content">
         <!--Greeting & Salutation -->
         <div id="greeting">

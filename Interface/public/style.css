@@ -184,6 +184,77 @@
     padding: 12px 16px;
   }
 
+
+  #authToggle .icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  /* authentication form (hidden by default) */
+  .auth-form {
+    position: absolute; 
+    top: 60px;  
+    right: 16px; 
+    background: #222;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    z-index: 11000;
+  }
+
+  .auth-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }  
+  
+  .auth-form input {
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 8px;
+  }
+  
+  .auth-tabs button {
+    background: #333;
+    color: #FBFBFB;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .auth-tabs button.active {
+    background: #555;
+  }
+  
+  /* auth form content styles */
+  .auth-form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .auth-form-content input {
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+  }
+  
+  .auth-form-content button {
+    padding: 6px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+  }
+
+  .auth-form #signoutForm {
+    display: none;
+    margin-top: 10px;
+  }
   
 
   /* ==========================================================================

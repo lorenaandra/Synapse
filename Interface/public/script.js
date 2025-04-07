@@ -11,7 +11,26 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('conversations:', document.getElementById('conversations'));
     console.log('topSearches:', document.getElementById('top-searches'));
 
+    const authForm = document.getElementById('auth-form');
+    const signinTab = document.getElementById('signinTab');
+    const signupTab = document.getElementById('signupTab');
+    const signoutTab = document.getElementById('signoutTab');
+    const signinForm = document.getElementById('signinForm');
+    const signupForm = document.getElementById('signupForm');
+    const signoutForm = document.getElementById('signoutForm');
+    const loginUsername = document.getElementById('loginUsername');
+    const loginPassword = document.getElementById('loginPassword');
+    const loginBtn = document.getElementById('loginBtn');
+    const signoutBtn = document.getElementById('signoutBtn');
+    const cancelSignoutBtn = document.getElementById('cancelSignoutBtn');
+    const cancelAuthBtn = document.getElementById('cancelAuthBtn');
+    const signupUsername = document.getElementById('signupUsername');
+    const signupPassword = document.getElementById('signupPassword');
+    const signupConfirmPassword = document.getElementById('signupConfirmPassword');
+    const signupBtn = document.getElementById('signupBtn');
+    const cancelSignupBtn = document.getElementById('cancelSignupBtn');
     const salutation = document.getElementById('salutation');
+
     const question = document.getElementById('question');
     const messages = document.getElementById('messages');
     const messageInput = document.getElementById('messageInput');
@@ -24,6 +43,159 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatArea = document.querySelector('.chat-area');
     const tempChatIcon = document.querySelector('.temp-chat-icon');
 
+    if (!localStorage.getItem('username')) {
+        localStorage.setItem('username', 'Anonymous');
+    }
+    
+    function updateGreeting() {
+        const name = localStorage.getItem('username') || 'Anonymous';
+        salutation.textContent = getTimeBasedGreeting(name);
+    }
+
+    updateGreeting();
+
+    authToggle.addEventListener('click', () => {
+        // user is already logged in
+        if (localStorage.getItem('username') && localStorage.getItem('username') !== 'Anonymous') {
+            signinForm.style.display = 'none';
+            signupForm.style.display = 'none';
+            signoutForm.style.display = 'block';
+            authForm.style.display = 'block';
+        } else {
+            if (authForm.style.display === 'none' || authForm.style.display === '') {
+                authForm.style.display = 'block';
+                signinForm.style.display = 'block';
+                signupForm.style.display = 'none';
+                signoutForm.style.display = 'none';
+                loginUsername.focus();
+          } else {
+                authForm.style.display = 'none';
+          }
+        }
+      });
+
+    // switch between tabs
+    signinTab.addEventListener('click', () => {
+        signinTab.classList.add('active');
+        signupTab.classList.remove('active');
+        signinForm.style.display = 'block';
+        signupForm.style.display = 'none';
+    });
+
+    signupTab.addEventListener('click', () => {
+        signupTab.classList.add('active');
+        signinTab.classList.remove('active');
+        signupForm.style.display = 'block';
+        signinForm.style.display = 'none';
+    });
+  
+    // Login event: send username and password to backend
+    loginBtn.addEventListener('click', () => {
+        const username = loginUsername.value.trim();
+        const password = loginPassword.value;
+
+        if (!username || !password) {
+        alert('Please enter both username and password.');
+        return;
+        }
+
+        fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+        })
+        .then(response => response.json())
+        .then(data => {
+        if (data.success) {
+            localStorage.setItem('username', username);
+            // store token: localStorage.setItem('token', data.token);
+            authForm.style.display = 'none';
+            updateGreeting();
+        } else {
+            alert(data.message || 'Login failed.');
+        }
+        })
+        .catch(error => {
+        console.error('Login error:', error);
+        alert('An error occurred during login.');
+        });
+    });
+    
+    // signup event - validate and send data to backend
+    signupBtn.addEventListener('click', () => {
+        const username = signupUsername.value.trim();
+        const password = signupPassword.value;
+        const confirmPassword = signupConfirmPassword.value;
+
+        if (!username || !password || !confirmPassword) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match.');
+            return;
+        }
+
+        fetch('/api/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+        })
+        .then(response => response.json())
+        .then(data => {
+        if (data.success) {
+            // automatically sign in the user after signup
+            localStorage.setItem('username', username);
+            authForm.style.display = 'none';
+            updateGreeting();
+        } else {
+            alert(data.message || 'Signup failed.');
+        }
+        })
+        .catch(error => {
+        console.error('Signup error:', error);
+        alert('An error occurred during signup.');
+        });
+    });
+    
+    cancelAuthBtn.addEventListener('click', () => {
+        authForm.style.display = 'none';
+    });
+    cancelSignupBtn.addEventListener('click', () => {
+        authForm.style.display = 'none';
+    });
+  
+    if (signoutBtn) {
+        signoutBtn.addEventListener('click', () => {
+          fetch('/api/signout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+          })
+            .then(response => response.json())
+            .then(data => {
+              if (data.success) {
+                localStorage.setItem('username', 'Anonymous');
+                authForm.style.display = 'none';
+                updateGreeting(); // update greeting to Anonymous
+              } else {
+                alert(data.message || 'Sign out failed.');
+              }
+            })
+            .catch(error => {
+              console.error('Signout error:', error);
+              alert('An error occurred during sign out.');
+            });
+        });
+      }
+    
+      if (cancelSignoutBtn) {
+        cancelSignoutBtn.addEventListener('click', () => {
+          authForm.style.display = 'none';
+        });
+      }
+
+
     if (!sendBtn) {
         console.error('Send button not found! Check the ID in HTML.');
         return; 
@@ -33,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Ghost icon not found! Check the image path or class in HTML.');
     }
 
-    function getTimeBasedGreeting(name = 'friend') {
+    function getTimeBasedGreeting(name = 'Anonymous') {
         const hour = new Date().getHours();
     
         let greeting;
