@@ -3,6 +3,7 @@ node_modules/
 github_sshkey
 github_sshkey.pub
 Backend/db_credentials.js
+Model/LookupData/raw_data/
 
 # Ignore .env files for environment variables
 .env
