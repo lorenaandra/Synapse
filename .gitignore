@@ -4,6 +4,7 @@ github_sshkey
 github_sshkey.pub
 Backend/db_credentials.js
 Model/LookupData/raw_data/
+Model/.venv/
 
 # Ignore .env files for environment variables
 .env
