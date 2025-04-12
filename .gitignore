@@ -5,7 +5,8 @@ github_sshkey.pub
 Backend/db_credentials.js
 Model/LookupData/raw_data/
 Model/.venv/
-Model/Dataset/*.json
+Model/Dataset/fever/
+Model/Dataset/multifc/
 
 # Ignore .env files for environment variables
 .env
