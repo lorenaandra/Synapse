@@ -1,0 +1,281 @@
+Running with LR=3e-5
+===== STAGE 1: TRAIN ON MULTIFC (CLAIM-ONLY) =====
+Creating datasets and dataloaders...
+Freezing bottom 10 layers of RoBERTa...
+Setting up optimizer and scheduler...
+[Epoch 1 | Step 100] loss=1.0349
+[Epoch 1 | Step 200] loss=0.8733
+[Epoch 1 | Step 300] loss=0.8969
+[Epoch 1 | Step 400] loss=0.8692
+[Epoch 1 | Step 500] loss=0.8448
+[Epoch 1 | Step 600] loss=0.8543
+[Epoch 1 | Step 700] loss=0.8361
+[Epoch 1 | Step 800] loss=0.8368
+[Epoch 1 | Step 900] loss=0.8066
+[Epoch 1 | Step 1000] loss=0.7965
+[Epoch 1 | Step 1100] loss=0.8267
+[Epoch 1 | Step 1200] loss=0.7767
+[Epoch 1 | Step 1300] loss=0.7588
+[Epoch 1 | Step 1400] loss=0.8220
+[Epoch 1 | Step 1500] loss=0.7691
+[Epoch 1 | Step 1600] loss=0.7781
+[Epoch 1 | Step 1700] loss=0.7705
+[Epoch 1 | Step 1800] loss=0.7382
+[Epoch 1 | Step 1900] loss=0.7727
+[Epoch 1 | Step 2000] loss=0.7946
+[Epoch 1 | Step 2100] loss=0.7461
+[Epoch 1 | Step 2200] loss=0.7996
+[Epoch 1 | Step 2300] loss=0.8049
+[Epoch 1 | Step 2400] loss=0.7659
+[Epoch 1 | Step 2500] loss=0.7966
+>>> Epoch 1 average train loss: 0.8148
+Epoch [1/3] Val loss: 0.7609 | Val Acc: 0.6480 | Val F1: 0.5301
+[Epoch 2 | Step 100] loss=0.7440
+[Epoch 2 | Step 200] loss=0.7323
+[Epoch 2 | Step 300] loss=0.7687
+[Epoch 2 | Step 400] loss=0.7470
+[Epoch 2 | Step 500] loss=0.7417
+[Epoch 2 | Step 600] loss=0.7081
+[Epoch 2 | Step 700] loss=0.7100
+[Epoch 2 | Step 800] loss=0.7188
+[Epoch 2 | Step 900] loss=0.6775
+[Epoch 2 | Step 1000] loss=0.6838
+[Epoch 2 | Step 1100] loss=0.6956
+[Epoch 2 | Step 1200] loss=0.6597
+[Epoch 2 | Step 1300] loss=0.6529
+[Epoch 2 | Step 1400] loss=0.7051
+[Epoch 2 | Step 1500] loss=0.6790
+[Epoch 2 | Step 1600] loss=0.6799
+[Epoch 2 | Step 1700] loss=0.6546
+[Epoch 2 | Step 1800] loss=0.6470
+[Epoch 2 | Step 1900] loss=0.6329
+[Epoch 2 | Step 2000] loss=0.6508
+[Epoch 2 | Step 2100] loss=0.6186
+[Epoch 2 | Step 2200] loss=0.6708
+[Epoch 2 | Step 2300] loss=0.6553
+[Epoch 2 | Step 2400] loss=0.6637
+[Epoch 2 | Step 2500] loss=0.6793
+>>> Epoch 2 average train loss: 0.6871
+Epoch [2/3] Val loss: 0.7507 | Val Acc: 0.6480 | Val F1: 0.5532
+[Epoch 3 | Step 100] loss=0.5893
+[Epoch 3 | Step 200] loss=0.5435
+[Epoch 3 | Step 300] loss=0.6360
+[Epoch 3 | Step 400] loss=0.5732
+[Epoch 3 | Step 500] loss=0.5519
+[Epoch 3 | Step 600] loss=0.4677
+[Epoch 3 | Step 700] loss=0.4684
+[Epoch 3 | Step 800] loss=0.5245
+[Epoch 3 | Step 900] loss=0.4488
+[Epoch 3 | Step 1000] loss=0.4475
+[Epoch 3 | Step 1100] loss=0.4508
+[Epoch 3 | Step 1200] loss=0.3949
+[Epoch 3 | Step 1300] loss=0.4180
+[Epoch 3 | Step 1400] loss=0.4334
+[Epoch 3 | Step 1500] loss=0.4592
+[Epoch 3 | Step 1600] loss=0.4460
+[Epoch 3 | Step 1700] loss=0.3721
+[Epoch 3 | Step 1800] loss=0.3872
+[Epoch 3 | Step 1900] loss=0.3467
+[Epoch 3 | Step 2000] loss=0.3644
+[Epoch 3 | Step 2100] loss=0.3475
+[Epoch 3 | Step 2200] loss=0.4425
+[Epoch 3 | Step 2300] loss=0.4004
+[Epoch 3 | Step 2400] loss=0.4366
+[Epoch 3 | Step 2500] loss=0.4441
+>>> Epoch 3 average train loss: 0.4548
+Epoch [3/3] Val loss: 0.8674 | Val Acc: 0.6448 | Val F1: 0.5628
+Stage 1 model saved to /Users/lorenaandravacarean/Desktop/Fake News/Model/claim-only/stage1_claim_only0.pth.
+------------------------------------------------------------
+--> Final val_acc: 0.6448
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+Running with LR=0.0001
+===== STAGE 1: TRAIN ON MULTIFC (CLAIM-ONLY) =====
+Creating datasets and dataloaders...
+Initializing model...
+Freezing bottom 10 layers of RoBERTa...
+Setting up optimizer and scheduler...
+[Epoch 1 | Step 100] loss=0.9429
+[Epoch 1 | Step 200] loss=0.8524
+[Epoch 1 | Step 300] loss=0.8939
+[Epoch 1 | Step 400] loss=0.8783
+[Epoch 1 | Step 500] loss=0.8596
+[Epoch 1 | Step 600] loss=0.9052
+[Epoch 1 | Step 700] loss=0.8888
+[Epoch 1 | Step 800] loss=0.9294
+[Epoch 1 | Step 900] loss=0.9018
+[Epoch 1 | Step 1000] loss=0.8790
+[Epoch 1 | Step 1100] loss=0.9289
+[Epoch 1 | Step 1200] loss=0.8796
+[Epoch 1 | Step 1300] loss=0.8857
+[Epoch 1 | Step 1400] loss=0.9529
+[Epoch 1 | Step 1500] loss=0.8993
+[Epoch 1 | Step 1600] loss=0.8977
+[Epoch 1 | Step 1700] loss=0.8962
+[Epoch 1 | Step 1800] loss=0.8706
+[Epoch 1 | Step 1900] loss=0.9161
+[Epoch 1 | Step 2000] loss=0.9416
+[Epoch 1 | Step 2100] loss=0.9027
+[Epoch 1 | Step 2200] loss=0.9245
+[Epoch 1 | Step 2300] loss=0.9498
+[Epoch 1 | Step 2400] loss=0.9042
+[Epoch 1 | Step 2500] loss=0.9314
+>>> Epoch 1 average train loss: 0.9051
+Epoch [1/3] Val loss: 0.9287 | Val Acc: 0.6119 | Val F1: 0.2531
+[Epoch 2 | Step 100] loss=0.9126
+[Epoch 2 | Step 200] loss=0.8811
+[Epoch 2 | Step 300] loss=0.9177
+[Epoch 2 | Step 400] loss=0.9370
+[Epoch 2 | Step 500] loss=0.8789
+[Epoch 2 | Step 600] loss=0.9275
+[Epoch 2 | Step 700] loss=0.8971
+[Epoch 2 | Step 800] loss=0.9182
+[Epoch 2 | Step 900] loss=0.8949
+[Epoch 2 | Step 1000] loss=0.8738
+[Epoch 2 | Step 1100] loss=0.9279
+[Epoch 2 | Step 1200] loss=0.8776
+[Epoch 2 | Step 1300] loss=0.8824
+[Epoch 2 | Step 1400] loss=0.9445
+[Epoch 2 | Step 1500] loss=0.8949
+[Epoch 2 | Step 1600] loss=0.8957
+[Epoch 2 | Step 1700] loss=0.8921
+[Epoch 2 | Step 1800] loss=0.8691
+[Epoch 2 | Step 1900] loss=0.9104
+[Epoch 2 | Step 2000] loss=0.9363
+[Epoch 2 | Step 2100] loss=0.8980
+[Epoch 2 | Step 2200] loss=0.9189
+[Epoch 2 | Step 2300] loss=0.9474
+[Epoch 2 | Step 2400] loss=0.9010
+[Epoch 2 | Step 2500] loss=0.9277
+>>> Epoch 2 average train loss: 0.9069
+Epoch [2/3] Val loss: 0.9087 | Val Acc: 0.6119 | Val F1: 0.2531
+[Epoch 3 | Step 100] loss=0.9101
+[Epoch 3 | Step 200] loss=0.8794
+[Epoch 3 | Step 300] loss=0.9264
+[Epoch 3 | Step 400] loss=0.9350
+[Epoch 3 | Step 500] loss=0.8761
+[Epoch 3 | Step 600] loss=0.9251
+[Epoch 3 | Step 700] loss=0.8973
+[Epoch 3 | Step 800] loss=0.9156
+[Epoch 3 | Step 900] loss=0.8926
+[Epoch 3 | Step 1000] loss=0.8723
+[Epoch 3 | Step 1100] loss=0.9271
+[Epoch 3 | Step 1200] loss=0.8768
+[Epoch 3 | Step 1300] loss=0.8814
+[Epoch 3 | Step 1400] loss=0.9433
+[Epoch 3 | Step 1500] loss=0.8939
+[Epoch 3 | Step 1600] loss=0.8947
+[Epoch 3 | Step 1700] loss=0.8908
+[Epoch 3 | Step 1800] loss=0.8684
+[Epoch 3 | Step 1900] loss=0.9089
+[Epoch 3 | Step 2000] loss=0.9361
+[Epoch 3 | Step 2100] loss=0.8968
+[Epoch 3 | Step 2200] loss=0.9169
+[Epoch 3 | Step 2300] loss=0.9483
+[Epoch 3 | Step 2400] loss=0.8981
+[Epoch 3 | Step 2500] loss=0.9253
+>>> Epoch 3 average train loss: 0.9059
+Epoch [3/3] Val loss: 0.9052 | Val Acc: 0.6119 | Val F1: 0.2531
+Stage 1 model saved to /Users/lorenaandravacarean/Desktop/Fake News/Model/claim-only/stage1_claim_only1.pth.
+------------------------------------------------------------
+--> Final val_acc: 0.6119
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+Running with LR=5e-05
+===== STAGE 1: TRAIN ON MULTIFC (CLAIM-ONLY) =====
+Creating datasets and dataloaders...
+Initializing model...
+Freezing bottom 10 layers of RoBERTa...
+Setting up optimizer and scheduler...
+[Epoch 1 | Step 100] loss=1.0063
+[Epoch 1 | Step 200] loss=0.8604
+[Epoch 1 | Step 300] loss=0.8831
+[Epoch 1 | Step 400] loss=0.8702
+[Epoch 1 | Step 500] loss=0.8472
+[Epoch 1 | Step 600] loss=0.8537
+[Epoch 1 | Step 700] loss=0.8550
+[Epoch 1 | Step 800] loss=0.9113
+[Epoch 1 | Step 900] loss=0.8326
+[Epoch 1 | Step 1000] loss=0.8149
+[Epoch 1 | Step 1100] loss=0.8758
+[Epoch 1 | Step 1200] loss=0.8712
+[Epoch 1 | Step 1300] loss=0.8804
+[Epoch 1 | Step 1400] loss=0.9539
+[Epoch 1 | Step 1500] loss=0.8963
+[Epoch 1 | Step 1600] loss=0.8786
+[Epoch 1 | Step 1700] loss=0.8806
+[Epoch 1 | Step 1800] loss=0.8502
+[Epoch 1 | Step 1900] loss=0.8963
+[Epoch 1 | Step 2000] loss=0.9094
+[Epoch 1 | Step 2100] loss=0.8765
+[Epoch 1 | Step 2200] loss=0.8992
+[Epoch 1 | Step 2300] loss=0.9019
+[Epoch 1 | Step 2400] loss=0.8809
+[Epoch 1 | Step 2500] loss=0.8952
+>>> Epoch 1 average train loss: 0.8841
+Epoch [1/3] Val loss: 0.9012 | Val Acc: 0.6216 | Val F1: 0.3060
+[Epoch 2 | Step 100] loss=0.8996
+[Epoch 2 | Step 200] loss=0.8772
+[Epoch 2 | Step 300] loss=0.9118
+[Epoch 2 | Step 400] loss=1.0022
+[Epoch 2 | Step 500] loss=0.8811
+[Epoch 2 | Step 600] loss=0.9279
+[Epoch 2 | Step 700] loss=0.8981
+[Epoch 2 | Step 800] loss=0.9192
+[Epoch 2 | Step 900] loss=0.8946
+[Epoch 2 | Step 1000] loss=0.8737
+[Epoch 2 | Step 1100] loss=0.9279
+[Epoch 2 | Step 1200] loss=0.8776
+[Epoch 2 | Step 1300] loss=0.8823
+[Epoch 2 | Step 1400] loss=0.9445
+[Epoch 2 | Step 1500] loss=0.8948
+[Epoch 2 | Step 1600] loss=0.8958
+[Epoch 2 | Step 1700] loss=0.8920
+[Epoch 2 | Step 1800] loss=0.8690
+[Epoch 2 | Step 1900] loss=0.9102
+[Epoch 2 | Step 2000] loss=0.9361
+[Epoch 2 | Step 2100] loss=0.8979
+[Epoch 2 | Step 2200] loss=0.9187
+[Epoch 2 | Step 2300] loss=0.9473
+[Epoch 2 | Step 2400] loss=0.9009
+[Epoch 2 | Step 2500] loss=0.9272
+>>> Epoch 2 average train loss: 0.9087
+Epoch [2/3] Val loss: 0.9081 | Val Acc: 0.6119 | Val F1: 0.2531
+[Epoch 3 | Step 100] loss=0.9100
+[Epoch 3 | Step 200] loss=0.8793
+[Epoch 3 | Step 300] loss=0.9262
+[Epoch 3 | Step 400] loss=0.9349
+[Epoch 3 | Step 500] loss=0.8759
+[Epoch 3 | Step 600] loss=0.9249
+[Epoch 3 | Step 700] loss=0.8973
+[Epoch 3 | Step 800] loss=0.9154
+[Epoch 3 | Step 900] loss=0.8925
+[Epoch 3 | Step 1000] loss=0.8722
+[Epoch 3 | Step 1100] loss=0.9271
+[Epoch 3 | Step 1200] loss=0.8766
+[Epoch 3 | Step 1300] loss=0.8815
+[Epoch 3 | Step 1400] loss=0.9432
+[Epoch 3 | Step 1500] loss=0.8940
+[Epoch 3 | Step 1600] loss=0.8945
+[Epoch 3 | Step 1700] loss=0.8908
+[Epoch 3 | Step 1800] loss=0.8684
+[Epoch 3 | Step 1900] loss=0.9089
+[Epoch 3 | Step 2000] loss=0.9362
+[Epoch 3 | Step 2100] loss=0.8966
+[Epoch 3 | Step 2200] loss=0.9168
+[Epoch 3 | Step 2300] loss=0.9483
+[Epoch 3 | Step 2400] loss=0.8980
+[Epoch 3 | Step 2500] loss=0.9253
+>>> Epoch 3 average train loss: 0.9058
+Epoch [3/3] Val loss: 0.9052 | Val Acc: 0.6119 | Val F1: 0.2531
+Stage 1 model saved to /Users/lorenaandravacarean/Desktop/Fake News/Model/claim-only/stage1_claim_only2.pth.
+------------------------------------------------------------
+--> Final val_acc: 0.6119
+------------------------------------------------------------
+
+
+

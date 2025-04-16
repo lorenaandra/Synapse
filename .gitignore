@@ -7,6 +7,7 @@ Model/LookupData/raw_data/
 Model/.venv/
 Model/Dataset/fever/
 Model/Dataset/multifc/
+Model/claim-only/*.pth
 
 # Ignore .env files for environment variables
 .env
