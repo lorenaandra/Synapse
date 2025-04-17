@@ -1,0 +1,278 @@
+Freezing bottom 10 layers of RoBERTa...
+Setting up optimizer and scheduler...
+[Epoch 1 | Step 100] loss=1.0456
+[Epoch 1 | Step 200] loss=0.9476
+[Epoch 1 | Step 300] loss=0.9217
+[Epoch 1 | Step 400] loss=0.9128
+[Epoch 1 | Step 500] loss=0.8490
+[Epoch 1 | Step 600] loss=0.8683
+[Epoch 1 | Step 700] loss=0.8406
+[Epoch 1 | Step 800] loss=0.8538
+[Epoch 1 | Step 900] loss=0.8123
+[Epoch 1 | Step 1000] loss=0.7872
+[Epoch 1 | Step 1100] loss=0.8105
+[Epoch 1 | Step 1200] loss=0.7790
+[Epoch 1 | Step 1300] loss=0.7619
+[Epoch 1 | Step 1400] loss=0.8294
+[Epoch 1 | Step 1500] loss=0.7704
+[Epoch 1 | Step 1600] loss=0.7724
+[Epoch 1 | Step 1700] loss=0.7804
+[Epoch 1 | Step 1800] loss=0.7363
+[Epoch 1 | Step 1900] loss=0.7899
+[Epoch 1 | Step 2000] loss=0.7795
+[Epoch 1 | Step 2100] loss=0.7509
+[Epoch 1 | Step 2200] loss=0.8010
+[Epoch 1 | Step 2300] loss=0.8057
+[Epoch 1 | Step 2400] loss=0.7701
+[Epoch 1 | Step 2500] loss=0.8055
+>>> Epoch 1 average train loss: 0.8234
+Epoch [1/10] Val loss: 0.7720 | Val Acc: 0.6448 | Val F1: 0.5386
+[Epoch 2 | Step 100] loss=0.7661
+[Epoch 2 | Step 200] loss=0.7467
+[Epoch 2 | Step 300] loss=0.8026
+[Epoch 2 | Step 400] loss=0.7713
+[Epoch 2 | Step 500] loss=0.7722
+[Epoch 2 | Step 600] loss=0.7476
+[Epoch 2 | Step 700] loss=0.7488
+[Epoch 2 | Step 800] loss=0.7793
+[Epoch 2 | Step 900] loss=0.7263
+[Epoch 2 | Step 1000] loss=0.7281
+[Epoch 2 | Step 1100] loss=0.7220
+[Epoch 2 | Step 1200] loss=0.6914
+[Epoch 2 | Step 1300] loss=0.6912
+[Epoch 2 | Step 1400] loss=0.7550
+[Epoch 2 | Step 1500] loss=0.7059
+[Epoch 2 | Step 1600] loss=0.7101
+[Epoch 2 | Step 1700] loss=0.6863
+[Epoch 2 | Step 1800] loss=0.6706
+[Epoch 2 | Step 1900] loss=0.7018
+[Epoch 2 | Step 2000] loss=0.6767
+[Epoch 2 | Step 2100] loss=0.6533
+[Epoch 2 | Step 2200] loss=0.7108
+[Epoch 2 | Step 2300] loss=0.6975
+[Epoch 2 | Step 2400] loss=0.7115
+[Epoch 2 | Step 2500] loss=0.7210
+>>> Epoch 2 average train loss: 0.7236
+Epoch [2/10] Val loss: 0.7639 | Val Acc: 0.6241 | Val F1: 0.5390
+[Epoch 3 | Step 100] loss=0.6743
+[Epoch 3 | Step 200] loss=0.6059
+[Epoch 3 | Step 300] loss=0.6780
+[Epoch 3 | Step 400] loss=0.6520
+[Epoch 3 | Step 500] loss=0.6260
+[Epoch 3 | Step 600] loss=0.5708
+[Epoch 3 | Step 700] loss=0.5843
+[Epoch 3 | Step 800] loss=0.6198
+[Epoch 3 | Step 900] loss=0.5703
+[Epoch 3 | Step 1000] loss=0.5683
+[Epoch 3 | Step 1100] loss=0.5066
+[Epoch 3 | Step 1200] loss=0.4702
+[Epoch 3 | Step 1300] loss=0.5153
+[Epoch 3 | Step 1400] loss=0.5387
+[Epoch 3 | Step 1500] loss=0.5604
+[Epoch 3 | Step 1600] loss=0.5045
+[Epoch 3 | Step 1700] loss=0.4419
+[Epoch 3 | Step 1800] loss=0.4965
+[Epoch 3 | Step 1900] loss=0.4441
+[Epoch 3 | Step 2000] loss=0.4505
+[Epoch 3 | Step 2100] loss=0.3922
+[Epoch 3 | Step 2200] loss=0.5307
+[Epoch 3 | Step 2300] loss=0.4654
+[Epoch 3 | Step 2400] loss=0.4915
+[Epoch 3 | Step 2500] loss=0.4701
+>>> Epoch 3 average train loss: 0.5365
+Epoch [3/10] Val loss: 0.8701 | Val Acc: 0.6038 | Val F1: 0.5504
+[Epoch 4 | Step 100] loss=0.4301
+[Epoch 4 | Step 200] loss=0.3262
+[Epoch 4 | Step 300] loss=0.4237
+[Epoch 4 | Step 400] loss=0.3517
+[Epoch 4 | Step 500] loss=0.3360
+[Epoch 4 | Step 600] loss=0.2872
+[Epoch 4 | Step 700] loss=0.3382
+[Epoch 4 | Step 800] loss=0.3486
+[Epoch 4 | Step 900] loss=0.2933
+[Epoch 4 | Step 1000] loss=0.3054
+[Epoch 4 | Step 1100] loss=0.3073
+[Epoch 4 | Step 1200] loss=0.2280
+[Epoch 4 | Step 1300] loss=0.2096
+[Epoch 4 | Step 1400] loss=0.2514
+[Epoch 4 | Step 1500] loss=0.3367
+[Epoch 4 | Step 1600] loss=0.2473
+[Epoch 4 | Step 1700] loss=0.1979
+[Epoch 4 | Step 1800] loss=0.2462
+[Epoch 4 | Step 1900] loss=0.2367
+[Epoch 4 | Step 2000] loss=0.2352
+[Epoch 4 | Step 2100] loss=0.1655
+[Epoch 4 | Step 2200] loss=0.2572
+[Epoch 4 | Step 2300] loss=0.2201
+[Epoch 4 | Step 2400] loss=0.2337
+[Epoch 4 | Step 2500] loss=0.1902
+>>> Epoch 4 average train loss: 0.2800
+Epoch [4/10] Val loss: 1.1683 | Val Acc: 0.6219 | Val F1: 0.5428
+[Epoch 5 | Step 100] loss=0.1709
+[Epoch 5 | Step 200] loss=0.1503
+[Epoch 5 | Step 300] loss=0.1846
+[Epoch 5 | Step 400] loss=0.1433
+[Epoch 5 | Step 500] loss=0.1384
+[Epoch 5 | Step 600] loss=0.1698
+[Epoch 5 | Step 700] loss=0.1700
+[Epoch 5 | Step 800] loss=0.2105
+[Epoch 5 | Step 900] loss=0.1726
+[Epoch 5 | Step 1000] loss=0.1450
+[Epoch 5 | Step 1100] loss=0.1994
+[Epoch 5 | Step 1200] loss=0.0890
+[Epoch 5 | Step 1300] loss=0.1133
+[Epoch 5 | Step 1400] loss=0.1346
+[Epoch 5 | Step 1500] loss=0.1532
+[Epoch 5 | Step 1600] loss=0.1265
+[Epoch 5 | Step 1700] loss=0.1125
+[Epoch 5 | Step 1800] loss=0.1043
+[Epoch 5 | Step 1900] loss=0.0909
+[Epoch 5 | Step 2000] loss=0.1435
+[Epoch 5 | Step 2100] loss=0.0668
+[Epoch 5 | Step 2200] loss=0.1687
+[Epoch 5 | Step 2300] loss=0.1445
+[Epoch 5 | Step 2400] loss=0.1332
+[Epoch 5 | Step 2500] loss=0.0813
+>>> Epoch 5 average train loss: 0.1402
+Epoch [5/10] Val loss: 1.4049 | Val Acc: 0.6389 | Val F1: 0.5472
+[Epoch 6 | Step 100] loss=0.0799
+[Epoch 6 | Step 200] loss=0.0742
+[Epoch 6 | Step 300] loss=0.1014
+[Epoch 6 | Step 400] loss=0.0614
+[Epoch 6 | Step 500] loss=0.0797
+[Epoch 6 | Step 600] loss=0.0610
+[Epoch 6 | Step 700] loss=0.0719
+[Epoch 6 | Step 800] loss=0.1331
+[Epoch 6 | Step 900] loss=0.1136
+[Epoch 6 | Step 1000] loss=0.0855
+[Epoch 6 | Step 1100] loss=0.0871
+[Epoch 6 | Step 1200] loss=0.0624
+[Epoch 6 | Step 1300] loss=0.0520
+[Epoch 6 | Step 1400] loss=0.0843
+[Epoch 6 | Step 1500] loss=0.1275
+[Epoch 6 | Step 1600] loss=0.1141
+[Epoch 6 | Step 1700] loss=0.0769
+[Epoch 6 | Step 1800] loss=0.0621
+[Epoch 6 | Step 1900] loss=0.0547
+[Epoch 6 | Step 2000] loss=0.0623
+[Epoch 6 | Step 2100] loss=0.0441
+[Epoch 6 | Step 2200] loss=0.0757
+[Epoch 6 | Step 2300] loss=0.0715
+[Epoch 6 | Step 2400] loss=0.0536
+[Epoch 6 | Step 2500] loss=0.0611
+>>> Epoch 6 average train loss: 0.0780
+Epoch [6/10] Val loss: 1.6279 | Val Acc: 0.6376 | Val F1: 0.5372
+[Epoch 7 | Step 100] loss=0.0381
+[Epoch 7 | Step 200] loss=0.0466
+[Epoch 7 | Step 300] loss=0.0453
+[Epoch 7 | Step 400] loss=0.0527
+[Epoch 7 | Step 500] loss=0.0564
+[Epoch 7 | Step 600] loss=0.0737
+[Epoch 7 | Step 700] loss=0.0438
+[Epoch 7 | Step 800] loss=0.0419
+[Epoch 7 | Step 900] loss=0.0466
+[Epoch 7 | Step 1000] loss=0.0360
+[Epoch 7 | Step 1100] loss=0.0548
+[Epoch 7 | Step 1200] loss=0.0398
+[Epoch 7 | Step 1300] loss=0.0595
+[Epoch 7 | Step 1400] loss=0.0397
+[Epoch 7 | Step 1500] loss=0.0480
+[Epoch 7 | Step 1600] loss=0.0407
+[Epoch 7 | Step 1700] loss=0.0382
+[Epoch 7 | Step 1800] loss=0.0311
+[Epoch 7 | Step 1900] loss=0.0381
+[Epoch 7 | Step 2000] loss=0.0472
+[Epoch 7 | Step 2100] loss=0.0255
+[Epoch 7 | Step 2200] loss=0.0402
+[Epoch 7 | Step 2300] loss=0.0386
+[Epoch 7 | Step 2400] loss=0.0429
+[Epoch 7 | Step 2500] loss=0.0262
+>>> Epoch 7 average train loss: 0.0436
+Epoch [7/10] Val loss: 1.7946 | Val Acc: 0.6172 | Val F1: 0.5360
+[Epoch 8 | Step 100] loss=0.0411
+[Epoch 8 | Step 200] loss=0.0310
+[Epoch 8 | Step 300] loss=0.0228
+[Epoch 8 | Step 400] loss=0.0278
+[Epoch 8 | Step 500] loss=0.0342
+[Epoch 8 | Step 600] loss=0.0340
+[Epoch 8 | Step 700] loss=0.0238
+[Epoch 8 | Step 800] loss=0.0495
+[Epoch 8 | Step 900] loss=0.0294
+[Epoch 8 | Step 1000] loss=0.0181
+[Epoch 8 | Step 1100] loss=0.0259
+[Epoch 8 | Step 1200] loss=0.0179
+[Epoch 8 | Step 1300] loss=0.0122
+[Epoch 8 | Step 1400] loss=0.0225
+[Epoch 8 | Step 1500] loss=0.0248
+[Epoch 8 | Step 1600] loss=0.0337
+[Epoch 8 | Step 1700] loss=0.0175
+[Epoch 8 | Step 1800] loss=0.0361
+[Epoch 8 | Step 1900] loss=0.0104
+[Epoch 8 | Step 2000] loss=0.0361
+[Epoch 8 | Step 2100] loss=0.0119
+[Epoch 8 | Step 2200] loss=0.0094
+[Epoch 8 | Step 2300] loss=0.0084
+[Epoch 8 | Step 2400] loss=0.0205
+[Epoch 8 | Step 2500] loss=0.0405
+>>> Epoch 8 average train loss: 0.0252
+Epoch [8/10] Val loss: 1.9318 | Val Acc: 0.6288 | Val F1: 0.5475
+[Epoch 9 | Step 100] loss=0.0231
+[Epoch 9 | Step 200] loss=0.0138
+[Epoch 9 | Step 300] loss=0.0093
+[Epoch 9 | Step 400] loss=0.0268
+[Epoch 9 | Step 500] loss=0.0196
+[Epoch 9 | Step 600] loss=0.0080
+[Epoch 9 | Step 700] loss=0.0149
+[Epoch 9 | Step 800] loss=0.0156
+[Epoch 9 | Step 900] loss=0.0217
+[Epoch 9 | Step 1000] loss=0.0090
+[Epoch 9 | Step 1100] loss=0.0097
+[Epoch 9 | Step 1200] loss=0.0106
+[Epoch 9 | Step 1300] loss=0.0030
+[Epoch 9 | Step 1400] loss=0.0129
+[Epoch 9 | Step 1500] loss=0.0023
+[Epoch 9 | Step 1600] loss=0.0164
+[Epoch 9 | Step 1700] loss=0.0044
+[Epoch 9 | Step 1800] loss=0.0027
+[Epoch 9 | Step 1900] loss=0.0072
+[Epoch 9 | Step 2000] loss=0.0085
+[Epoch 9 | Step 2100] loss=0.0026
+[Epoch 9 | Step 2200] loss=0.0074
+[Epoch 9 | Step 2300] loss=0.0113
+[Epoch 9 | Step 2400] loss=0.0066
+[Epoch 9 | Step 2500] loss=0.0059
+>>> Epoch 9 average train loss: 0.0107
+Epoch [9/10] Val loss: 2.2044 | Val Acc: 0.6313 | Val F1: 0.5495
+[Epoch 10 | Step 100] loss=0.0039
+[Epoch 10 | Step 200] loss=0.0112
+[Epoch 10 | Step 300] loss=0.0185
+[Epoch 10 | Step 400] loss=0.0039
+[Epoch 10 | Step 500] loss=0.0041
+[Epoch 10 | Step 600] loss=0.0019
+[Epoch 10 | Step 700] loss=0.0024
+[Epoch 10 | Step 800] loss=0.0032
+[Epoch 10 | Step 900] loss=0.0061
+[Epoch 10 | Step 1000] loss=0.0073
+[Epoch 10 | Step 1100] loss=0.0096
+[Epoch 10 | Step 1200] loss=0.0045
+[Epoch 10 | Step 1300] loss=0.0025
+[Epoch 10 | Step 1400] loss=0.0023
+[Epoch 10 | Step 1500] loss=0.0019
+[Epoch 10 | Step 1600] loss=0.0010
+[Epoch 10 | Step 1700] loss=0.0006
+[Epoch 10 | Step 1800] loss=0.0008
+[Epoch 10 | Step 1900] loss=0.0017
+[Epoch 10 | Step 2000] loss=0.0035
+[Epoch 10 | Step 2100] loss=0.0006
+[Epoch 10 | Step 2200] loss=0.0008
+[Epoch 10 | Step 2300] loss=0.0025
+[Epoch 10 | Step 2400] loss=0.0023
+[Epoch 10 | Step 2500] loss=0.0016
+>>> Epoch 10 average train loss: 0.0039
+Epoch [10/10] Val loss: 2.2647 | Val Acc: 0.6429 | Val F1: 0.5532
+Stage 1 model saved to /Users/lorenaandravacarean/Desktop/Fake News/Model/claim-only/stage1_claim_only3.pth.
+------------------------------------------------------------
+--> Final val_acc: 0.6429
+------------------------------------------------------------
+
+

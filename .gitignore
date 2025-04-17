@@ -8,6 +8,7 @@ Model/.venv/
 Model/Dataset/fever/
 Model/Dataset/multifc/
 Model/claim-only/*.pth
+Model/claim-only/hyperparam/*.pth
 
 # Ignore .env files for environment variables
 .env
