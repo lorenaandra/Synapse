@@ -1,7 +1,7 @@
 # Synapse
 ![alt text](https://github.com/lorenaandra/Synapse/blob/main/Interface/public/images/synapse-logo.png)
 
-Synapse is an artificial intelligence chatbot presented as a web application built with Node.js, Express, and PostgreSQL. Its entire purpose is to support users in claim verification based on an existing database and on the internet searches. The app supports user authentication (sign‑up, sign‑in, and sign‑out) behind a profile icon. Users can chat as registered users or continue anonymously. This repository includes both the backend API endpoints and the front‑end implementation, with future plans to integrate a chatbot model.
+Synapse is an artificial intelligence chatbot presented as a web application built with Node.js, Express, and PostgreSQL. Its entire purpose is to support users in claim verification based on an existing database and internet searches. The app supports user authentication (sign‑up, sign‑in, and sign‑out) behind a profile icon. Users can chat as registered users or continue anonymously. This repository includes both the backend API endpoints and the front‑end implementation, with future plans to integrate a chatbot model.
 
 ## Table of Contents
 
@@ -112,7 +112,7 @@ When you open the app, the homepage displays with the Synapse logo, a greeting, 
 	•	Sign In / Sign Up:
 When not signed in, clicking the profile icon toggles an auth form where users can choose between signing in (enter username and password) or signing up (enter username, password, and confirm password).
 	•	Persistent Login:
-When a user successfully logs in, their username is stored in localStorage, and the greeting is updated accordingly.
+When users successfully log in, their username is stored in localStorage, and the greeting is updated accordingly.
 	•	Sign Out:
 If the user is signed in, clicking the profile icon shows only the sign-out option. When clicked, it calls the /api/signout endpoint and resets the user to “Anonymous.”
 	
