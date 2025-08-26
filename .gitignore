@@ -8,6 +8,7 @@ Model/.venv/
 Model/Dataset/fever/
 Model/Dataset/multifc/
 *.pth
+.vscode
 
 # Ignore .env files for environment variables
 .env
