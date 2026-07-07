@@ -21,3 +21,7 @@ build/
 
 # Ignore OS-specific files (Mac)
 .DS_Store
+
+ai-stack/ollama-data/
+ai-stack/openwebui-data/
+ai-stack/model-api/__pycache__/
