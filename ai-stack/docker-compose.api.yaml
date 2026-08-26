@@ -8,10 +8,10 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ../Model/stage2_epoch1_valf10.9477.pth:/models/stage2_epoch1_valf10.9477.pth
+      - ../Model/claim+evidence/stage2_epoch5_valf10.9579.pth:/models/stage2_epoch5_valf10.9579.pth
       - ./model-api/logs:/app/logs
     environment:
-      - MODEL_PATH=/models/stage2_epoch1_valf10.9477.pth
+      - MODEL_PATH=/models/stage2_epoch5_valf10.9579.pth
       - TRANSFORMERS_OFFLINE=1
       - HF_DATASETS_OFFLINE=1
       - LOG_PATH=/app/logs/classifier.log

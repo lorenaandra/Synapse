@@ -16,6 +16,7 @@ NER strategy (in priority order):
 
 import logging
 import re
+import time
 from typing import Dict, List, Optional, Set
 
 import requests
@@ -159,6 +160,47 @@ def _extract_entities(claim: str) -> List[str]:
 
 
 # wikipedia retrieval
+
+def _get_with_retry(params: dict, timeout: int, max_retries: int = 3):
+    """
+    GET against the Wikipedia API with retry/backoff on 429 and 5xx.
+
+    Respects the Retry-After header when present (Wikipedia sends this on
+    429s); otherwise backs off with 1s, 2s, 4s. Without this, bursts of
+    requests (e.g. testing several claims back-to-back) silently degrade
+    every subsequent call to the claim-only fallback path, which looks
+    like a retrieval-quality problem but is actually just rate limiting.
+    """
+    delay = 1.0
+    last_exc = None
+    for attempt in range(max_retries + 1):
+        try:
+            resp = requests.get(
+                WIKI_API_URL, params=params, headers={"User-Agent": USER_AGENT}, timeout=timeout
+            )
+            if resp.status_code == 429 or resp.status_code >= 500:
+                if attempt == max_retries:
+                    resp.raise_for_status()
+                wait = float(resp.headers.get("Retry-After", delay))
+                logger.warning(
+                    f"Wikipedia API {resp.status_code}, retrying in {wait:.1f}s "
+                    f"(attempt {attempt + 1}/{max_retries})"
+                )
+                time.sleep(wait)
+                delay *= 2
+                continue
+            resp.raise_for_status()
+            return resp
+        except requests.exceptions.RequestException as e:
+            last_exc = e
+            if attempt == max_retries:
+                raise
+            logger.warning(f"Wikipedia API request failed ({e}), retrying in {delay:.1f}s")
+            time.sleep(delay)
+            delay *= 2
+    raise last_exc
+
+
 def _search_candidate_titles(query: str, limit: int, timeout: int) -> List[str]:
     params = {
         "action": "query",
@@ -167,10 +209,7 @@ def _search_candidate_titles(query: str, limit: int, timeout: int) -> List[str]:
         "format": "json",
         "srlimit": limit,
     }
-    resp = requests.get(
-        WIKI_API_URL, params=params, headers={"User-Agent": USER_AGENT}, timeout=timeout
-    )
-    resp.raise_for_status()
+    resp = _get_with_retry(params, timeout=timeout)
     hits = resp.json().get("query", {}).get("search", [])
     return [hit["title"] for hit in hits]
 
@@ -211,10 +250,7 @@ def _fetch_plain_text(title: str, timeout: int) -> str:
         "titles": title,
         "format": "json",
     }
-    resp = requests.get(
-        WIKI_API_URL, params=params, headers={"User-Agent": USER_AGENT}, timeout=timeout
-    )
-    resp.raise_for_status()
+    resp = _get_with_retry(params, timeout=timeout)
     pages = resp.json().get("query", {}).get("pages", {})
     for page in pages.values():
         return (page.get("extract") or "")[:MAX_EXTRACT_CHARS]
@@ -280,7 +316,7 @@ def retrieve_evidence(
     claim: str,
     max_pages: int = 3,
     max_sentences: int = 3,
-    min_score: float = 0.25,
+    min_score: float = 0.35,
     timeout: int = 5,
 ) -> Dict:
     """

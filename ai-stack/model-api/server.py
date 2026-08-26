@@ -113,6 +113,11 @@ def predict_with_evidence(req: PredictRequest):
     evidence = retrieve_evidence(req.text)
 
     if evidence["found"]:
+        for src in evidence["sources"]:
+            logger.info(
+                f"EVIDENCE CANDIDATE: score={src['score']:.3f} | "
+                f"title={src['title']!r} | sentence={src['sentence']!r}"
+            )
         result = _classify(
             req.text,
             text_pair=evidence["evidence_text"],
@@ -130,6 +135,7 @@ def predict_with_evidence(req: PredictRequest):
         f"RESULT: label={result['label']} | "
         f"confidence={result['confidence']:.4f} | "
         f"evidence_found={evidence['found']} | "
+        f"evidence_titles={[s['title'] for s in result['sources']]} | "
         f"probs={result['probabilities']}"
     )
 
